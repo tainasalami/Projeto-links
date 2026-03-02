@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------------------------- */
+/*         DARK MODE            */
+/* ---------------------------- */
+
+:root {
+  --text-color: rgb(0, 0, 0);
+  --bg-url: url(./assets/bg-mobile.jpg);
+
+  --stroke-color: rgba(255, 255, 255, 0.3);
+  --surface-color: rgb(255, 255, 255);
+  --surface-switch-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(255, 255, 255, 0.804);
+
+  --icon-color: white;
+  --icon-hover: rgba(255, 255, 255, 0.9);
+
+  --special-text: white;
+
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+/* ---------------------------- */
+/*         LIGHT MODE           */
+/* ---------------------------- */
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+
+  --stroke-color: rgba(0, 0, 0, 0.25);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-switch-color: rgba(255, 255, 255, 0.796);
+  --surface-color-hover: rgb(255, 255, 255);
+
+  --icon-color: black;
+  --icon-hover: rgba(0, 0, 0, 0.671);
+
+  /* no light mode ficam pretos */
+  --special-text: black;
+
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+/* ---------------------------- */
+/*        ESTILO GERAL          */
+/* ---------------------------- */
+
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+/* textos especiais */
+.special {
+  color: var(--special-text) !important;
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+/* ---------------------------- */
+/*         PROFILE              */
+/* ---------------------------- */
+
+#profile {
+  text-align: center;
+  padding: 24px;
+  margin-top: 8px;
+}
+
+#profile img {
+  width: 111px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.username {
+  color: var(--text-color);
+}
+
+/* ---------------------------- */
+/*           SWITCH             */
+/* ---------------------------- */
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1; /* para ficar acima do span */
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-switch-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* ---------------------------- */
+/*           LINKS              */
+/* ---------------------------- */
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 24px;
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: bold;
+
+  transition: 0.25s ease;
+}
+
+/* hover dos links */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1px solid var(--stroke-color);
+  box-shadow: 0 0 6px var(--stroke-color);
+  transform: scale(1.02);
+}
+
+/* ---------------------------- */
+/*       SOCIAL LINKS           */
+/* ---------------------------- */
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+/* área clicável */
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+  border-radius: 50%;
+  transition: 0.25s ease;
+}
+
+/* ícones */
+.icon {
+  color: var(--icon-color);
+  transition: 0.25s ease;
+}
+
+#social-links a:hover {
+  background: rgba(255, 255, 255, 0.1); /* transparente */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transform: scale(1.12);
+}
+
+/* ícone no hover */
+#social-links a:hover .icon {
+  color: var(--icon-hover);
+}
+
+/* ---------------------------- */
+/*          FOOTER              */
+/* ---------------------------- */
+
+.footer-text {
+  color: var(--text-color);
+  text-align: center;
+  font-size: 14px;
+  padding: 16px 0;
+}
